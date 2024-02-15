@@ -30,7 +30,10 @@ from Courses import ds_course,web_course,android_course,ios_course,uiux_course,r
 import nltk
 #nltk.download('stopwords')
 #import nltk
-nltk.data.path.append("/path/to/nltk_data")
+#nltk.data.path.append("/path/to/nltk_data")
+nltk.download()
+
+#showing info http://nltk.github.com/nltk_data/
 
 import requests
 from streamlit_lottie import st_lottie
