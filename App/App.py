@@ -29,8 +29,11 @@ from PIL import Image
 from Courses import ds_course,web_course,android_course,ios_course,uiux_course,resume_videos,interview_videos
 import nltk
 nltk.download('stopwords')
+#import nltk
+#nltk.data.path.append("/path/to/nltk_data")
 
-
+import requests
+from streamlit_lottie import st_lottie
 ###### Preprocessing functions ######
 
 
@@ -92,7 +95,7 @@ def course_recommender(course_list):
 
 
 # sql connector
-connection = pymysql.connect(host='localhost',user='root',password='root@MySQL4admin',db='cv')
+connection = pymysql.connect(host='localhost',user='root',password='Raj556534@',db='cv')
 cursor = connection.cursor()
 
 
@@ -125,6 +128,13 @@ st.set_page_config(
 )
 
 
+def load_lottieurl(url):
+  r = requests.get(url)
+  if r.status_code != 200:
+      return None
+  return r.json()
+
+lottie_coding = load_lottieurl("https://lottie.host/3642dd19-82cd-43b6-9519-9f878cb71a67/c1mKWvabbz.json")
 ###### Main function run() ######
 
 
@@ -132,11 +142,13 @@ def run():
     
     # (Logo, Heading, Sidebar etc)
     img = Image.open('./Logo/RESUM.png')
-    st.image(img)
+    
+    st_lottie(lottie_coding, height=400, key="coding")
+   # st.image(img)
     st.sidebar.markdown("# Choose Something...")
     activities = ["User", "Feedback", "About", "Admin"]
     choice = st.sidebar.selectbox("Choose among the given options:", activities)
-    link = '<b>Built with 🤍 by <a href="https://dnoobnerd.netlify.app/" style="text-decoration: none; color: #021659;">Deepak Padhi</a></b>' 
+    link = '<b>Built with 🤍 by <a href="https://dnoobnerd.netlify.app/" style="text-decoration: none; color: #021659;">Saran Kumar, Nagaraj, Pradeep</a></b>' 
     st.sidebar.markdown(link, unsafe_allow_html=True)
     st.sidebar.markdown('''
         <!-- site visitors -->
