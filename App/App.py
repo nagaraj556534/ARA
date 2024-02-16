@@ -31,7 +31,7 @@ import nltk
 #nltk.download('stopwords')
 #import nltk
 #nltk.data.path.append("/path/to/nltk_data")
-nltk.download()
+nltk.download('http://nltk.github.com/nltk_data/')
 
 #showing info http://nltk.github.com/nltk_data/
 
