@@ -28,10 +28,10 @@ from PIL import Image
 # pre stored data for prediction purposes
 from Courses import ds_course,web_course,android_course,ios_course,uiux_course,resume_videos,interview_videos
 import nltk
-#nltk.download('stopwords')
+nltk.download('stopwords')
 #import nltk
 #nltk.data.path.append("/path/to/nltk_data")
-nltk.download('http://nltk.github.com/nltk_data/')
+#nltk.download('http://nltk.github.com/nltk_data/')
 
 #showing info http://nltk.github.com/nltk_data/
 
