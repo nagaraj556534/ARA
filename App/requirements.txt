@@ -1,4 +1,4 @@
-python -m pip install --upgrade pip
+/home/adminuser/venv/bin/python -m pip install --upgrade pip
 altair==4.2.0
 attrs==22.1.0
 blinker==1.5
