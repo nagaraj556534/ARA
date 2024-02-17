@@ -28,6 +28,7 @@ from PIL import Image
 # pre stored data for prediction purposes
 from Courses import ds_course,web_course,android_course,ios_course,uiux_course,resume_videos,interview_videos
 import nltk
+nltk.set_proxy("http://proxy.example.com:3128",('USERNAME', 'PASSWORD'))
 nltk.download('stopwords')
 #import nltk
 #nltk.data.path.append("/path/to/nltk_data")
@@ -661,7 +662,7 @@ def run():
             <b>Feedback -</b> <br/>
             A place where user can suggest some feedback about the tool.<br/><br/>
             <b>Admin -</b> <br/>
-            For login use <b>admin</b> as username and <b>admin@resume-analyzer</b> as password.<br/>
+            For login use <b>*****</b> as username and <b>********</b> as password.<br/>
             It will load all the required stuffs and perform analysis.
         </p><br/><br/>
 
@@ -685,7 +686,7 @@ def run():
         if st.button('Login'):
             
             ## Credentials 
-            if ad_user == 'admin' and ad_password == 'admin@resume-analyzer':
+            if ad_user == 'admin' and ad_password == 'Ai':
                 
                 ### Fetch miscellaneous data from user_data(table) and convert it into dataframe
                 cursor.execute('''SELECT ID, ip_add, resume_score, convert(Predicted_Field using utf8), convert(User_level using utf8), city, state, country from user_data''')
@@ -694,7 +695,7 @@ def run():
                 
                 ### Total Users Count with a Welcome Message
                 values = plot_data.Idt.count()
-                st.success("Welcome Deepak ! Total %d " % values + " User's Have Used Our Tool : )")                
+                st.success("Welcome Admin ! Total %d " % values + " User's Have Used Our Tool : )")                
                 
                 ### Fetch user data from user_data(table) and convert it into dataframe
                 cursor.execute('''SELECT ID, sec_token, ip_add, act_name, act_mail, act_mob, convert(Predicted_Field using utf8), Timestamp, Name, Email_ID, resume_score, Page_no, pdf_name, convert(User_level using utf8), convert(Actual_skills using utf8), convert(Recommended_skills using utf8), convert(Recommended_courses using utf8), city, state, country, latlong, os_name_ver, host_name, dev_user from user_data''')
