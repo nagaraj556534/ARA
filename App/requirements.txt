@@ -1,6 +1,5 @@
-/home/adminuser/venv/bin/python -m pip install --upgrade pip
 altair==4.2.0
-attrs==22.1.0
+attrs==22.1.0 
 blinker==1.5
 blis==0.7.8
 cachetools==5.2.0
