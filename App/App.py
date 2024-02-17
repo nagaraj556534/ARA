@@ -28,7 +28,7 @@ from PIL import Image
 # pre stored data for prediction purposes
 from Courses import ds_course,web_course,android_course,ios_course,uiux_course,resume_videos,interview_videos
 import nltk
-nltk.set_proxy("http://proxy.example.com:3128",('USERNAME', 'PASSWORD'))
+#nltk.set_proxy("http://proxy.example.com:3128",('USERNAME', 'PASSWORD'))
 nltk.download('stopwords')
 #import nltk
 #nltk.data.path.append("/path/to/nltk_data")
